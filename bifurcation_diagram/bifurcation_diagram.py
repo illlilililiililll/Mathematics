@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from singleBifurcation import logistic
+import singleBifurcation
 
 def bifurcate(seed:float, n_skip:int, n_iter:int, step:float=0.0001, r_min:float=0.0):
     X = []
@@ -12,7 +12,7 @@ def bifurcate(seed:float, n_skip:int, n_iter:int, step:float=0.0001, r_min:float
             if i >= n_skip:
                 X.append(x)
                 Y.append(y)
-            y = logistic(x, y)
+            y = singleBifurcation.logistic(x, y)
    
     plt.plot(X, Y, ls='', marker=',', color='black')
     plt.ylim(0, 1)
